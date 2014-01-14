@@ -1,5 +1,6 @@
 package anagram;
 
+import anagram.Anagram;
 import org.junit.Assert;
 import org.junit.Test;
 
