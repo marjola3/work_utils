@@ -34,21 +34,9 @@ public class Anagram {
         Map<Character, Integer> s1LiteryMap = new HashMap<Character, Integer>();
         Map<Character, Integer> s2LiteryMap = new HashMap<Character, Integer>();
 
-        for (int i = 0; i < s1MaleLitery.length(); i++) {
-            char znak = s1MaleLitery.charAt(i);
-            if (!s1LiteryMap.containsKey(znak)){
-                s1LiteryMap.put(znak, 0);
-           }
-           s1LiteryMap.put(znak, s1LiteryMap.get(znak) + 1);
-        }
 
-        for (int i = 0; i < s2MaleLitery.length(); i++) {
-            char znak = s2MaleLitery.charAt(i);
-            if (!s2LiteryMap.containsKey(znak)){
-                s2LiteryMap.put(znak, 0);
-            }
-            s2LiteryMap.put(znak, s2LiteryMap.get(znak) + 1);
-        }
+        addToMap(s1MaleLitery, s1LiteryMap);
+        addToMap(s2MaleLitery, s2LiteryMap);
 
         for (Character znak : s1LiteryMap.keySet()) {
             if (s1LiteryMap.get(znak) != s2LiteryMap.get(znak)) {
@@ -57,5 +45,15 @@ public class Anagram {
         }
 
         return true;
+    }
+
+    public static void addToMap(String litera, Map<Character, Integer> map) {
+        for (int i = 0; i < litera.length(); i++) {
+            char znak = litera.charAt(i);
+            if (!map.containsKey(znak)){
+                map.put(znak, 0);
+            }
+            map.put(znak, map.get(znak) + 1);
+        }
     }
 }
