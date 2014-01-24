@@ -24,6 +24,5 @@ public class AnagramTest {
         Assert.assertFalse(Anagram.isAnagram("fjf   ", "fsf fs fseee"));
 
 
-
     }
 }
